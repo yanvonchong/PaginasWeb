@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="640" height="460" viewBox="0 0 640 460" role="img" aria-label="Retrato ilustrado">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f6f1df"/>
+      <stop offset="100%" stop-color="#efe9d7"/>
+    </linearGradient>
+    <linearGradient id="jacket" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#f4c54a"/>
+      <stop offset="100%" stop-color="#df9f2b"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#ffd9c5"/>
+      <stop offset="100%" stop-color="#f7bfa3"/>
+    </linearGradient>
+  </defs>
+  <rect width="640" height="460" fill="url(#bg)"/>
+  <rect x="402" y="18" width="260" height="170" rx="28" fill="#ece8d8"/>
+  <rect x="350" y="240" width="250" height="198" rx="20" fill="#ece7d7"/>
+
+  <ellipse cx="400" cy="148" rx="86" ry="94" fill="#352524"/>
+  <ellipse cx="406" cy="156" rx="74" ry="84" fill="#442f2c"/>
+  <ellipse cx="400" cy="166" rx="56" ry="66" fill="url(#skin)"/>
+
+  <circle cx="380" cy="157" r="6" fill="#34211f"/>
+  <circle cx="421" cy="157" r="6" fill="#34211f"/>
+  <path d="M380 188 Q401 204 422 188" fill="none" stroke="#7f4438" stroke-width="5" stroke-linecap="round"/>
+
+  <rect x="310" y="246" width="188" height="188" rx="36" fill="url(#jacket)"/>
+  <rect x="332" y="280" width="72" height="146" rx="20" fill="#f5d068"/>
+  <rect x="396" y="280" width="88" height="146" rx="22" fill="#d79a2a"/>
+
+  <path d="M458 280 Q516 292 543 340" fill="none" stroke="#f0b84a" stroke-width="24" stroke-linecap="round"/>
+  <circle cx="540" cy="341" r="20" fill="url(#skin)"/>
+
+  <circle cx="347" cy="171" r="14" fill="none" stroke="#f0643d" stroke-width="4"/>
+  <circle cx="454" cy="171" r="14" fill="none" stroke="#f0643d" stroke-width="4"/>
+</svg>

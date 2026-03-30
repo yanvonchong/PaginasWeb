@@ -1,0 +1,7 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="220" height="88" viewBox="0 0 220 88" role="img" aria-label="Cliente Blue Harbor">
+  <rect width="220" height="88" rx="8" fill="#ffffff"/>
+  <rect x="14" y="20" width="32" height="48" rx="6" fill="#f1f7ff" stroke="#16c7e8"/>
+  <path d="M20 50 C26 38 34 38 40 50" fill="none" stroke="#0d9fc0" stroke-width="3"/>
+  <text x="58" y="40" fill="#0f1728" font-size="15" font-family="Segoe UI, Arial, sans-serif" font-weight="700">Blue Harbor</text>
+  <text x="58" y="58" fill="#6a7787" font-size="11" font-family="Segoe UI, Arial, sans-serif">Retail Group</text>
+</svg>

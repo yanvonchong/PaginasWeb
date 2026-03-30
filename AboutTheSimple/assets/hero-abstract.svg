@@ -1,0 +1,42 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 960 690" role="img" aria-label="Flujo digital abstracto">
+  <defs>
+    <linearGradient id="bg" x1="0" x2="1" y1="0" y2="1">
+      <stop offset="0%" stop-color="#1c0633" />
+      <stop offset="55%" stop-color="#260a4c" />
+      <stop offset="100%" stop-color="#0e0c23" />
+    </linearGradient>
+    <linearGradient id="line1" x1="0" x2="1" y1="0.1" y2="0.9">
+      <stop offset="0%" stop-color="#fd4584" />
+      <stop offset="100%" stop-color="#8518f8" />
+    </linearGradient>
+    <linearGradient id="line2" x1="1" x2="0" y1="0.1" y2="1">
+      <stop offset="0%" stop-color="#fd4384" />
+      <stop offset="100%" stop-color="#ca2be0" />
+    </linearGradient>
+    <filter id="glow" x="-50%" y="-50%" width="200%" height="200%">
+      <feGaussianBlur stdDeviation="14" result="blur"/>
+      <feMerge>
+        <feMergeNode in="blur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  <rect width="960" height="690" fill="url(#bg)" rx="16" />
+  <path
+    d="M-20 470 C180 360 270 540 470 450 C610 385 680 255 860 285 C970 304 1040 378 1020 430 C986 512 860 585 690 588 C545 590 370 533 250 546 C129 559 34 614 -20 650 Z"
+    fill="url(#line1)"
+    opacity="0.78"
+    filter="url(#glow)"
+  />
+  <path
+    d="M40 228 C230 98 292 275 476 226 C620 188 710 38 900 64 C972 74 1028 116 1030 155 C1032 226 968 293 858 321 C741 351 595 340 476 351 C312 365 169 421 25 437 Z"
+    fill="url(#line2)"
+    opacity="0.72"
+    filter="url(#glow)"
+  />
+  <path
+    d="M140 640 C240 564 334 628 454 583 C571 540 650 425 780 438 C855 447 922 501 920 562 C918 630 870 681 790 690 L140 690 Z"
+    fill="#6c29d8"
+    opacity="0.4"
+  />
+</svg>
