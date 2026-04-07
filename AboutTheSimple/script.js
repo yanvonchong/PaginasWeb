@@ -8,12 +8,93 @@ const floatingNavLinks = document.querySelectorAll('.floating-nav a[href^="#"]')
 const allNavLinks = [...drawerNavLinks, ...floatingNavLinks];
 const revealItems = document.querySelectorAll(".reveal");
 const counters = document.querySelectorAll("[data-counter]");
+const heroPhotos = document.querySelectorAll(".hero-simple-photo");
 const yearNode = document.getElementById("year");
+const pageLoader = document.querySelector(".page-loader");
+const isContactoHash = window.location.hash.toLowerCase() === "#contacto";
+const LOADER_SESSION_KEY = "ats_loader_shown";
 let unlockMenuTimer = null;
 const MENU_CLOSE_ANIMATION_MS = 460;
+const LOADER_MIN_DURATION_MS = 1800;
+const HERO_PHOTO_ROTATION_MS = 5000;
+
+if (pageLoader) {
+  const loaderStart = performance.now();
+  const navigationEntry = performance.getEntriesByType("navigation")[0];
+  const navigationType = navigationEntry?.type || "navigate";
+  const hasLoaderShownInSession = (() => {
+    try {
+      return sessionStorage.getItem(LOADER_SESSION_KEY) === "1";
+    } catch {
+      return false;
+    }
+  })();
+  const shouldShowLoader = !isContactoHash && (navigationType === "reload" || !hasLoaderShownInSession);
+  let loaderRemoved = false;
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  const cleanupLoader = () => {
+    if (loaderRemoved) return;
+    loaderRemoved = true;
+    body.classList.remove("is-loading");
+    pageLoader.remove();
+  };
+
+  const hideLoader = () => {
+    pageLoader.classList.add("is-hidden");
+    if (prefersReducedMotion) {
+      cleanupLoader();
+      return;
+    }
+    const onLoaderAnimationEnd = (event) => {
+      if (event.target !== pageLoader || event.animationName !== "loader-fade-out") return;
+      pageLoader.removeEventListener("animationend", onLoaderAnimationEnd);
+      cleanupLoader();
+    };
+    pageLoader.addEventListener("animationend", onLoaderAnimationEnd);
+    // Fallback in case animationend does not fire.
+    setTimeout(cleanupLoader, 1300);
+  };
+
+  const scheduleLoaderHide = () => {
+    const elapsed = performance.now() - loaderStart;
+    const wait = Math.max(LOADER_MIN_DURATION_MS - elapsed, 0);
+    setTimeout(hideLoader, wait);
+  };
+
+  if (!shouldShowLoader) {
+    cleanupLoader();
+  } else {
+    try {
+      sessionStorage.setItem(LOADER_SESSION_KEY, "1");
+    } catch {
+      // Ignore storage failures and keep loader behavior.
+    }
+
+    if (document.readyState === "complete") {
+      scheduleLoaderHide();
+    } else {
+      window.addEventListener("load", scheduleLoaderHide, { once: true });
+    }
+  }
+}
 
 if (yearNode) {
   yearNode.textContent = new Date().getFullYear();
+}
+
+if (heroPhotos.length > 1) {
+  let activePhotoIndex = [...heroPhotos].findIndex((photo) => photo.classList.contains("is-active"));
+  if (activePhotoIndex < 0) {
+    activePhotoIndex = 0;
+    heroPhotos[0].classList.add("is-active");
+  }
+
+  setInterval(() => {
+    heroPhotos[activePhotoIndex].classList.remove("is-active");
+    activePhotoIndex = (activePhotoIndex + 1) % heroPhotos.length;
+    heroPhotos[activePhotoIndex].classList.add("is-active");
+  }, HERO_PHOTO_ROTATION_MS);
 }
 
 if (menuButton && nav) {

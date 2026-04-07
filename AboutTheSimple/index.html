@@ -45,10 +45,9 @@
             "email": "info@aboutthesimple.com",
             "telephone": "+50764019195",
             "sameAs": [
-              "https://instagram.com/aboutthesimple",
-              "https://www.tiktok.com/@about.thesimple",
-              "https://facebook.com/aboutthesimple",
-              "https://www.linkedin.com/company/aboutthesimple"
+              "https://instagram.com/about.thesimple",
+              "https://www.tiktok.com/@aboutthesimple",
+              "https://facebook.com/aboutthesimple"
             ]
           },
           {
@@ -84,7 +83,12 @@
     </script>
 </head>
 
-<body>
+<body class="is-loading">
+  <div class="page-loader" role="status" aria-live="polite" aria-label="Cargando sitio">
+    <img class="page-loader-logo" src="assets/about-the-simple-logo-transparent.png" width="794" height="324"
+      alt="About the Simple" />
+  </div>
+
   <a class="skip-link" href="#contenido">Saltar al contenido</a>
 
   <!-- Header and primary navigation -->
@@ -95,7 +99,7 @@
         <a href="trabajos.html">Trabajos</a>
       </nav>
 
-      <a class="brand" href="index.html#inicio" aria-label="Ir al inicio de About the Simple">
+      <a class="brand" href="#inicio" aria-label="Ir al inicio de About the Simple">
         <img class="brand-logo" src="assets/about-the-simple-logo-transparent.png" width="794" height="324"
           alt="About the Simple" />
       </a>
@@ -125,38 +129,30 @@
   <main id="contenido">
     <!-- Hero -->
     <section class="hero section">
-      <div class="container hero-grid">
-        <div class="hero-copy hero-bounce">
-          <p class="hero-chip">WE CAN HELP YOU</p>
-          <h1>
-            Grow <span class="hero-highlight">faster</span> with our all-in-one marketing
-            platform
-          </h1>
-          <div class="hero-flow" aria-hidden="true">
-            <span></span>
-          </div>
-          <p class="lead">
-            We are digital agency focused on performance, automation and strategic creativity to
-            help ambitious brands achieve measurable growth goals.
+      <div class="container hero-simple-grid">
+        <div class="hero-simple-copy">
+          <h1 class="hero-simple-title">Marketing Digital<br />Estrategico</h1>
+          <p class="hero-simple-text">
+            Potenciamos marcas con estrategias digitales personalizadas y data-driven.
           </p>
-          <div class="hero-actions">
-            <a class="hero-primary" href="#contacto">
-              Get started
-              <span aria-hidden="true">-></span>
-            </a>
-            <a class="hero-secondary" href="servicios.html">Learn more</a>
-          </div>
+          <p class="hero-simple-services">
+            <span class="hero-simple-pin" aria-hidden="true"></span>
+            Publicidad
+            <span aria-hidden="true">|</span>
+            Contenido
+            <span aria-hidden="true">|</span>
+            Estrategia
+            <span aria-hidden="true">|</span>
+            Automatizacion
+          </p>
+          <a class="hero-simple-btn" href="#contacto">Hablemos</a>
         </div>
 
-        <figure class="hero-media reveal">
-          <img src="assets/hero-portrait.svg" width="640" height="460"
-            alt="Mujer sonriendo representando crecimiento de marca y resultados de marketing" />
-          <figcaption class="hero-note hero-note-metric">
-            <small>Congrats!</small>
-            <strong>$12.5</strong>
-            <span>1k+ horas de optimizacion</span>
-          </figcaption>
-          <div class="hero-note hero-note-mini" aria-hidden="true">AD</div>
+        <figure class="hero-simple-media">
+          <img class="hero-simple-photo is-active" src="assets/IMG_4855-web.png" width="1218" height="1600"
+            alt="Especialista de marketing digital en pose de pensamiento estrategico" />
+          <img class="hero-simple-photo hero-simple-photo-alt" src="assets/IMG_4868-web.png" width="864" height="1198"
+            alt="Especialista de marketing digital en pose expresiva de duda" loading="lazy" decoding="async" />
         </figure>
       </div>
     </section>
@@ -166,7 +162,7 @@
       <div class="container stats-shell reveal">
         <div class="stats-grid">
           <article class="stat reveal">
-            <p class="stat-value" data-counter="12" data-suffix="">0</p>
+            <p class="stat-value" data-counter="3" data-suffix="">0</p>
             <p class="stat-label">Years experience</p>
           </article>
           <article class="stat reveal">
@@ -178,9 +174,70 @@
             <p class="stat-label">Average review</p>
           </article>
           <article class="stat reveal">
-            <p class="stat-value" data-counter="80" data-suffix="+">0</p>
+            <p class="stat-value" data-counter="4" data-suffix="+">0</p>
             <p class="stat-label">Professional team</p>
           </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Client logos -->
+    <section id="clientes" class="section client-marquee-section" aria-label="Algunos de nuestros clientes">
+      <div class="container">
+        <div class="section-head section-head-center reveal">
+          <h2>Algunos de nuestros clientes</h2>
+        </div>
+
+        <div class="logo-marquee reveal" role="region" aria-label="Carrusel continuo de logos de clientes">
+          <div class="logo-marquee-track">
+            <figure class="logo-pill">
+              <img src="assets/carrusel%20de%20clientes/png/Logos-clientes-03.png" alt="Cliente 03" loading="lazy"
+                decoding="async" />
+            </figure>
+            <figure class="logo-pill">
+              <img src="assets/carrusel%20de%20clientes/png/logo-felix-panama-fb.png" alt="Felix Panama" loading="lazy"
+                decoding="async" />
+            </figure>
+            <figure class="logo-pill">
+              <img src="assets/carrusel%20de%20clientes/png/Logos-clientes-04.png" alt="Cliente 04" loading="lazy"
+                decoding="async" />
+            </figure>
+            <figure class="logo-pill">
+              <img src="assets/carrusel%20de%20clientes/png/Logos-clientes-05.png" alt="Cliente 05" loading="lazy"
+                decoding="async" />
+            </figure>
+            <figure class="logo-pill">
+              <img src="assets/carrusel%20de%20clientes/png/Logos-clientes-06.png" alt="Cliente 06" loading="lazy"
+                decoding="async" />
+            </figure>
+            <figure class="logo-pill">
+              <img src="assets/carrusel%20de%20clientes/png/pensa.png" alt="Pensa" loading="lazy" decoding="async" />
+            </figure>
+
+            <figure class="logo-pill" aria-hidden="true">
+              <img src="assets/carrusel%20de%20clientes/png/Logos-clientes-03.png" alt="" loading="lazy"
+                decoding="async" />
+            </figure>
+            <figure class="logo-pill" aria-hidden="true">
+              <img src="assets/carrusel%20de%20clientes/png/logo-felix-panama-fb.png" alt="" loading="lazy"
+                decoding="async" />
+            </figure>
+            <figure class="logo-pill" aria-hidden="true">
+              <img src="assets/carrusel%20de%20clientes/png/Logos-clientes-04.png" alt="" loading="lazy"
+                decoding="async" />
+            </figure>
+            <figure class="logo-pill" aria-hidden="true">
+              <img src="assets/carrusel%20de%20clientes/png/Logos-clientes-05.png" alt="" loading="lazy"
+                decoding="async" />
+            </figure>
+            <figure class="logo-pill" aria-hidden="true">
+              <img src="assets/carrusel%20de%20clientes/png/Logos-clientes-06.png" alt="" loading="lazy"
+                decoding="async" />
+            </figure>
+            <figure class="logo-pill" aria-hidden="true">
+              <img src="assets/carrusel%20de%20clientes/png/pensa.png" alt="" loading="lazy" decoding="async" />
+            </figure>
+          </div>
         </div>
       </div>
     </section>
@@ -233,13 +290,46 @@
             Dejanos simplificar el marketing para ti y hacer que tu negocio destaque donde
             realmente importa.
           </p>
-          <ul class="social-list" aria-label="Redes sociales de About the Simple">
-            <li><a href="https://instagram.com/aboutthesimple" aria-label="Instagram">Instagram</a></li>
-            <li><a href="https://tiktok.com/@about.thesimple" aria-label="TikTok">TikTok</a></li>
-            <li><a href="https://facebook.com/aboutthesimple" aria-label="Facebook">Facebook</a></li>
-            <li><a href="https://x.com/aboutthesimple" aria-label="X">X</a></li>
-            <li><a href="https://youtube.com/@aboutthesimple" aria-label="YouTube">YouTube</a></li>
-            <li><a href="https://linkedin.com/company/aboutthesimple" aria-label="LinkedIn">LinkedIn</a></li>
+          <h3 class="contact-info-title">INFORMACION DE CONTACTO</h3>
+          <ul class="social-list" aria-label="Informacion de contacto y redes sociales de About the Simple">
+            <li><a href="tel:+50764019195" aria-label="Telefono +50764019195">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M6.62 10.79a15.05 15.05 0 0 0 6.59 6.59l2.2-2.2a1 1 0 0 1 1-.24 11.5 11.5 0 0 0 3.61.58 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1C10.4 21 3 13.6 3 4a1 1 0 0 1 1-1h3.48a1 1 0 0 1 1 1 11.5 11.5 0 0 0 .58 3.61 1 1 0 0 1-.24 1l-2.2 2.18Z" />
+                </svg>
+                <span>+50764019195</span>
+              </a></li>
+            <li><a href="mailto:info@aboutthesimple.com" aria-label="Correo info@aboutthesimple.com">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M3 5h18v14H3V5Zm2 2v.2l7 4.67L19 7.2V7H5Zm14 10V9.6l-6.45 4.3a1 1 0 0 1-1.1 0L5 9.6V17h14Z" />
+                </svg>
+                <span>info@aboutthesimple.com</span>
+              </a></li>
+            <li><a href="https://www.tiktok.com/@aboutthesimple" aria-label="TikTok @aboutthesimple" target="_blank"
+                rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M14.5 3c.52 1.98 1.8 3.3 3.8 3.8v2.6a7.65 7.65 0 0 1-2.8-.86v5.53a5.07 5.07 0 1 1-5.07-5.07c.31 0 .6.03.9.08v2.66a2.53 2.53 0 1 0 1.64 2.37V3h1.56Z" />
+                </svg>
+                <span>@aboutthesimple</span>
+              </a></li>
+            <li><a href="https://instagram.com/about.thesimple" aria-label="Instagram about.thesimple" target="_blank"
+                rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7Zm11.25 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" />
+                </svg>
+                <span>about.thesimple</span>
+              </a></li>
+            <li><a href="https://facebook.com/aboutthesimple" aria-label="Facebook About the simple" target="_blank"
+                rel="noopener noreferrer">
+                <svg viewBox="0 0 24 24" aria-hidden="true">
+                  <path
+                    d="M13.5 21v-7h2.3l.35-2.75H13.5V9.5c0-.8.22-1.35 1.38-1.35h1.47V5.7a19.2 19.2 0 0 0-2.14-.1c-2.12 0-3.57 1.3-3.57 3.68v1.97H8.3V14h2.34v7h2.86Z" />
+                </svg>
+                <span>About the simple</span>
+              </a></li>
           </ul>
         </div>
 
@@ -267,7 +357,7 @@
 
       <div class="taped-main">
         <div class="taped-brand">
-          <a class="brand-link" href="index.html#inicio" aria-label="About the Simple">
+          <a class="brand-link" href="#inicio" aria-label="About the Simple">
             <img class="brand-logo brand-logo-footer" src="assets/about-the-simple-logo-transparent.png" width="794"
               height="324" alt="About the Simple" />
           </a>
@@ -293,9 +383,27 @@
           </div>
           <div>
             <h4>Canales</h4>
-            <a href="https://instagram.com/aboutthesimple">Instagram</a>
-            <a href="https://tiktok.com/@about.thesimple">TikTok</a>
-            <a href="https://linkedin.com/company/aboutthesimple">LinkedIn</a>
+            <a class="channel-link" href="https://instagram.com/about.thesimple">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M7 3h10a4 4 0 0 1 4 4v10a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4V7a4 4 0 0 1 4-4Zm0 2a2 2 0 0 0-2 2v10a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V7a2 2 0 0 0-2-2H7Zm11.25 1.5a1.25 1.25 0 1 1 0 2.5 1.25 1.25 0 0 1 0-2.5ZM12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8Zm0 2a2 2 0 1 0 0 4 2 2 0 0 0 0-4Z" />
+              </svg>
+              <span>about.thesimple</span>
+            </a>
+            <a class="channel-link" href="https://www.tiktok.com/@aboutthesimple">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M14.5 3c.52 1.98 1.8 3.3 3.8 3.8v2.6a7.65 7.65 0 0 1-2.8-.86v5.53a5.07 5.07 0 1 1-5.07-5.07c.31 0 .6.03.9.08v2.66a2.53 2.53 0 1 0 1.64 2.37V3h1.56Z" />
+              </svg>
+              <span>@aboutthesimple</span>
+            </a>
+            <a class="channel-link" href="https://facebook.com/aboutthesimple">
+              <svg viewBox="0 0 24 24" aria-hidden="true">
+                <path
+                  d="M13.5 21v-7h2.3l.35-2.75H13.5V9.5c0-.8.22-1.35 1.38-1.35h1.47V5.7a19.2 19.2 0 0 0-2.14-.1c-2.12 0-3.57 1.3-3.57 3.68v1.97H8.3V14h2.34v7h2.86Z" />
+              </svg>
+              <span>About the simple</span>
+            </a>
           </div>
         </div>
       </div>
@@ -312,20 +420,12 @@
       </div>
 
       <div class="footer-social">
-        <a href="https://linkedin.com/company/aboutthesimple" target="_blank" rel="noopener noreferrer"
-          aria-label="LinkedIn de About the Simple" title="LinkedIn">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M6.94 8.5a1.44 1.44 0 1 1 0-2.88 1.44 1.44 0 0 1 0 2.88ZM5.7 9.9h2.5v8.2H5.7V9.9Zm4.04 0h2.4v1.12h.03c.34-.64 1.17-1.32 2.42-1.32 2.6 0 3.08 1.7 3.08 3.92v4.48h-2.5v-3.97c0-.95-.02-2.17-1.33-2.17-1.33 0-1.54 1.03-1.54 2.1v4.04h-2.56V9.9Z" />
-          </svg>
-        </a>
-        <a href="https://x.com/aboutthesimple" target="_blank" rel="noopener noreferrer"
-          aria-label="X de About the Simple" title="X">
-          <svg viewBox="0 0 24 24" aria-hidden="true">
-            <path
-              d="M18.9 3h2.8l-6.1 7 7.2 11h-5.6l-4.4-6.8-5.9 6.8H4.1l6.6-7.6L3.8 3h5.7l4 6.2L18.9 3Zm-1 16.2h1.6L8.7 4.7H7l10.9 14.5Z" />
-          </svg>
-        </a>
+        <a href="https://instagram.com/about.thesimple" target="_blank" rel="noopener noreferrer"
+          aria-label="Instagram de About the Simple" title="Instagram">IG</a>
+        <a href="https://www.tiktok.com/@aboutthesimple" target="_blank" rel="noopener noreferrer"
+          aria-label="TikTok de About the Simple" title="TikTok">TT</a>
+        <a href="https://facebook.com/aboutthesimple" target="_blank" rel="noopener noreferrer"
+          aria-label="Facebook de About the Simple" title="Facebook">FB</a>
       </div>
     </div>
   </footer>
