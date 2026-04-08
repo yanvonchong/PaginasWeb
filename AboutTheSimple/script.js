@@ -9,6 +9,8 @@ const allNavLinks = [...drawerNavLinks, ...floatingNavLinks];
 const revealItems = document.querySelectorAll(".reveal");
 const counters = document.querySelectorAll("[data-counter]");
 const heroPhotos = document.querySelectorAll(".hero-simple-photo");
+const logoMarquee = document.querySelector(".logo-marquee");
+const logoMarqueeTrack = document.querySelector(".logo-marquee-track");
 const yearNode = document.getElementById("year");
 const pageLoader = document.querySelector(".page-loader");
 const isContactoHash = window.location.hash.toLowerCase() === "#contacto";
@@ -17,6 +19,8 @@ let unlockMenuTimer = null;
 const MENU_CLOSE_ANIMATION_MS = 460;
 const LOADER_MIN_DURATION_MS = 1800;
 const HERO_PHOTO_ROTATION_MS = 5000;
+const LOGO_MARQUEE_BASE_SPEED = 70;
+const LOGO_MARQUEE_HOVER_SPEED = 35;
 
 if (pageLoader) {
   const loaderStart = performance.now();
@@ -95,6 +99,58 @@ if (heroPhotos.length > 1) {
     activePhotoIndex = (activePhotoIndex + 1) % heroPhotos.length;
     heroPhotos[activePhotoIndex].classList.add("is-active");
   }, HERO_PHOTO_ROTATION_MS);
+}
+
+if (logoMarquee && logoMarqueeTrack) {
+  const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+  if (!prefersReducedMotion) {
+    let marqueeOffset = 0;
+    let currentSpeed = LOGO_MARQUEE_BASE_SPEED;
+    let rafId = 0;
+    let lastFrameTime = performance.now();
+
+    const getLoopWidth = () => logoMarqueeTrack.scrollWidth / 2;
+
+    const tickMarquee = (now) => {
+      const deltaSeconds = Math.max((now - lastFrameTime) / 1000, 0);
+      lastFrameTime = now;
+
+      const loopWidth = getLoopWidth();
+      if (loopWidth > 0) {
+        marqueeOffset -= currentSpeed * deltaSeconds;
+        while (marqueeOffset <= -loopWidth) marqueeOffset += loopWidth;
+        logoMarqueeTrack.style.transform = `translate3d(${marqueeOffset}px, 0, 0)`;
+      }
+
+      rafId = requestAnimationFrame(tickMarquee);
+    };
+
+    const setMarqueeSpeed = (isHovering) => {
+      currentSpeed = isHovering ? LOGO_MARQUEE_HOVER_SPEED : LOGO_MARQUEE_BASE_SPEED;
+    };
+
+    logoMarqueeTrack.style.animation = "none";
+    logoMarquee.addEventListener("mouseenter", () => setMarqueeSpeed(true));
+    logoMarquee.addEventListener("mouseleave", () => setMarqueeSpeed(false));
+    logoMarquee.addEventListener("focusin", () => setMarqueeSpeed(true));
+    logoMarquee.addEventListener("focusout", (event) => {
+      if (!logoMarquee.contains(event.relatedTarget)) setMarqueeSpeed(false);
+    });
+
+    document.addEventListener("visibilitychange", () => {
+      if (document.hidden) {
+        cancelAnimationFrame(rafId);
+        rafId = 0;
+        return;
+      }
+
+      lastFrameTime = performance.now();
+      if (!rafId) rafId = requestAnimationFrame(tickMarquee);
+    });
+
+    rafId = requestAnimationFrame(tickMarquee);
+  }
 }
 
 if (menuButton && nav) {
